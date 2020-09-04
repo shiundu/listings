@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../core/api/api.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listings',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listings.component.scss']
 })
 export class ListingsComponent implements OnInit {
+  items = [];
+  items$:Observable<any>;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
+  public getAllProducts () {
+    this.items$ = this.apiService.sendGetRequest('items');
+  }
+
+	ngOnInit() {
+    this.getAllProducts();
+  }
+
+  ngOnDestroy(){
   }
 
 }

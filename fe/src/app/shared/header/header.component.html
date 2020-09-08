@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <h1>
+    Listings app
+  </h1>
+  <button mat-button routerLink="/" routerLinkActive="active">Home</button>
+  <button mat-button routerLink="/listings" routerLinkActive="active">Listings</button>
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/listings/new">
+      <mat-icon>add</mat-icon>
+      <span>Add Item</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

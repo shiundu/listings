@@ -18,4 +18,9 @@ export class ApiService {
     return this.httpClient.get(this.SERVER_URL + path);
     // return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));
   }
+
+  public post(path: string, body){
+    return this.httpClient.post(this.SERVER_URL + path, body);
+    // return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));
+  }
 }

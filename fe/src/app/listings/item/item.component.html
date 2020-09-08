@@ -1,0 +1,13 @@
+
+<div class="hero-container">
+  <div
+    [ngClass]="'item-hero'"
+    [ngStyle]="{'background-image': 'url(' + item?.imageUrl + ')'}">
+  </div>
+</div>
+<div [ngClass]="'content'">
+  <div>
+    <h1>{{item?.name}}</h1>
+    {{item?.description}}
+  </div>
+</div>

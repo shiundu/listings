@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from '../../app.component'
-import { ListingsComponent } from '../../listings/listings.component'
-import { ItemComponent } from '../../listings/item/item.component'
-import { AddItemComponent } from '../../listings/add-item/add-item.component'
+import { AppComponent } from '../../app.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full'},
   { path: '', component: AppComponent },
-  { path: 'listings/new', component: AddItemComponent },
-  { path: 'listings/:id', component: ItemComponent },
-  { path: 'listings', component: ListingsComponent },
+  {path: 'listings',
+    loadChildren: () => import('../../listings/listings.module').then(m => m.ListingsModule)}
 ];
 
 @NgModule({

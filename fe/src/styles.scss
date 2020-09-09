@@ -2,7 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.content { padding: 20px;}
+.content { width: 90%; padding: 20px;}
 .spacer {
   flex: 1 1 auto;
+}
+.button-container-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.button-container-right button {
+  margin-left: 10px;
 }

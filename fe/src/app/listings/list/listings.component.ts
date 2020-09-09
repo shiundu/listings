@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ApiService } from '../core/service/api/api.service';
+import { ItemService } from '../../core/service/item/item.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -13,10 +13,10 @@ export class ListingsComponent implements OnInit {
   items = [];
   items$:Observable<any>;
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private itemService: ItemService, private router: Router) { }
 
   public getAllItems () {
-    this.items$ = this.apiService.sendGetRequest('items');
+    this.items$ = this.itemService.getItems();
   }
 
   onSelect(itemId: string) {

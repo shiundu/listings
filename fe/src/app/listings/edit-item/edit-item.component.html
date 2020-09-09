@@ -1,0 +1,43 @@
+<div class="content">
+  <form [formGroup]="itemForm" novalidate (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter item name</mat-label>
+        <input matInput placeholder="name" formControlName="name" required>
+        <mat-error *ngIf="itemForm.controls['name'].invalid && (itemForm.controls['name'].dirty || itemForm.controls['name'].touched)">
+          Enter name
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter item description</mat-label>
+        <textarea
+          matInput
+          rows="3"
+          placeholder="description"
+          formControlName="description"
+          required>
+        </textarea>
+        <mat-error *ngIf="itemForm.controls['description'].invalid && (itemForm.controls['description'].dirty || itemForm.controls['description'].touched)">
+          Enter description
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter item image url</mat-label>
+        <input matInput placeholder="url" formControlName="imageUrl">
+      </mat-form-field>
+    <div class="button-container-right">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="itemForm.pristine || itemForm.invalid">
+        {{ itemId ? 'Update' : 'Add item' }}
+      </button>
+      <button
+        mat-raised-button
+        color="warning"
+        (click)="onCancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

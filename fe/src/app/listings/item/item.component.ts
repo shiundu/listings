@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/core/service/api/api.service';
 import Item from 'src/app/core/service/item/item';
-import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ItemService } from 'src/app/core/service/item/item.service';
 
@@ -14,14 +12,28 @@ export class ItemComponent implements OnInit {
   item: Item;
   // items$:Observable<any>;
 
-  constructor(private itemService: ItemService, private route: ActivatedRoute) { }
+  constructor(private itemService: ItemService, private route: ActivatedRoute, private router: Router) { }
 
   public getItemDetails () {
     this.itemService.getItems(this.route.snapshot.params.id).subscribe((ob: Item) => {
       console.log('this.ob', ob);
       this.item = ob
     });
+
     console.log('item', this.item);
+  }
+
+  onDelete(id: number) {
+    this.itemService.deleteItem(id);
+    this.router.navigate(['/listings']);
+  }
+
+  backToListings() {
+    this.router.navigate(['/listings']);
+  }
+
+  onEdit(id: number) {
+    this.router.navigate([`/listings/edit/${id}`]);
   }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 # listings
 
-##1. clone the project 
+### 1. clone the project 
 
 ### 2. Launch server
 ```

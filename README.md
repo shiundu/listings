@@ -1,8 +1,8 @@
 # listings
 
-> clone the project 
+##1. clone the project 
 
-> ### Launch server
+### 2. Launch server
 ```
   cd server
 
@@ -13,7 +13,7 @@
   npm start
 ```
 
-> ### Launch FE
+### 3. Launch FE
 
 ```
   cd fe

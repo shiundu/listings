@@ -20,7 +20,26 @@ export class ApiService {
   }
 
   public post(path: string, body){
-    return this.httpClient.post(this.SERVER_URL + path, body);
+    return this.httpClient.post(this.SERVER_URL + path, body).subscribe(
+    (obj) => {
+      return obj;
+    });
+    // return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));
+  }
+
+  public delete(path: string){
+    return this.httpClient.delete(this.SERVER_URL + path).subscribe(
+    (obj) => {
+      return obj;
+    });
+    // return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));
+  }
+
+  public edit(path: string, body){
+    return this.httpClient.put(this.SERVER_URL + path, body).subscribe(
+      (obj) => {
+        return obj;
+      });
     // return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));
   }
 }

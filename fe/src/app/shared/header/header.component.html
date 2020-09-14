@@ -8,10 +8,13 @@
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
     <mat-icon>more_vert</mat-icon>
   </button>
+
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/listings/new">
+    <button *ngIf="auth.loggedIn" mat-menu-item routerLink="/listings/new">
       <mat-icon>add</mat-icon>
       <span>Add Item</span>
     </button>
+    <button mat-menu-item (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+    <button mat-menu-item (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
   </mat-menu>
 </mat-toolbar>

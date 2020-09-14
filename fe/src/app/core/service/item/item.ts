@@ -3,4 +3,5 @@ export default class Item {
   name: string;
   description: string;
   imageUrl: string;
+  status: boolean;
 }

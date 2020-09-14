@@ -9,8 +9,11 @@ import { ItemComponent } from './item/item.component';
 import { EditItemComponent } from './edit-item/edit-item.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [ListingsComponent, ItemComponent, EditItemComponent],
@@ -22,7 +25,10 @@ import { MatCardModule } from '@angular/material/card';
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    MatSnackBarModule
   ]
 })
 export class ListingsModule { }

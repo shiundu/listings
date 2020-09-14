@@ -3,6 +3,7 @@ import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
 import { ItemService } from '../../core/service/item/item.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import Item from '../../core/service/item/item';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-edit-item',
@@ -18,7 +19,14 @@ export class EditItemComponent implements OnInit {
     private fb: FormBuilder,
     private itemService:  ItemService,
     private router: Router,
-    private route: ActivatedRoute,) {
+    private route: ActivatedRoute,
+    private _snackBar: MatSnackBar) {
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 
   createForm(obj: Item = null) {
@@ -27,14 +35,16 @@ export class EditItemComponent implements OnInit {
         id: [obj.id, [Validators.required,  Validators.minLength(5)]],
         name: [obj.name, [Validators.required,  Validators.minLength(5)]],
         description: [obj.description, [Validators.required, Validators.minLength(10)]],
-        imageUrl: [obj.imageUrl]
+        imageUrl: [obj.imageUrl],
+        status: [obj.status]
       });
       return this.itemForm;
     }
     this.itemForm = this.fb.group({
       name: [null, [Validators.required,  Validators.minLength(5)]],
       description: [null, [Validators.required, Validators.minLength(10)]],
-      imageUrl: [null]
+      imageUrl: [null],
+      status: [false]
     });
   }
 
@@ -53,13 +63,16 @@ export class EditItemComponent implements OnInit {
 
   onCancel() {
     this.router.navigate(['/listings']);
+    // console.log('form', this.itemForm)
   }
 
   onSubmit() {
     if(this.itemId) {
-      return this.itemService.editItem({...this.itemForm.value});
+      this.itemService.editItem({...this.itemForm.value});
+      this.openSnackBar(`${this.itemForm.value['name']} updated`, '')
+      return;
     }
-    this.itemService.addItem({...this.itemForm.value})
+    this.itemService.addItem({...this.itemForm.value});
   }
 
   ngOnInit(): void {

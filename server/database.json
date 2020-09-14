@@ -2,21 +2,24 @@
   "items": [
     {
       "id": 7,
-      "name": "Tasty Soft Towels",
+      "name": "Tasty Soft Towel",
       "description": "Delectus suscipit eum. Ut quae laborum nesciunt sed illo dolorem ipsa. Nisi similique illum nihil provident dolores ullam quaerat neque.",
-      "imageUrl": "https://source.unsplash.com/1600x600/?product"
+      "imageUrl": "https://source.unsplash.com/1600x600/?product",
+      "status": true
     },
     {
       "id": 9,
       "name": "Small Steel",
       "description": "Et nesciunt dolore magni molestiae doloribus sunt debitis. Doloribus libero nemo est omnis sunt repellendus incidunt culpa. Velit ullam et qui beatae maxime fuga veniam porro. Est ut dignissimos minus nihil est labore reiciendis odio odit.",
-      "imageUrl": "https://source.unsplash.com/1600x900/?product"
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "status": true
     },
     {
       "id": 10,
-      "name": "Refined Frozen Table",
+      "name": "Refined Frozen Tables",
       "description": "Porro omnis reiciendis. Omnis quidem repellat ut ex quasi necessitatibus temporibus id. Optio rerum voluptatem omnis praesentium iste similique.",
-      "imageUrl": "https://source.unsplash.com/1600x900/?product"
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "status": true
     },
     {
       "id": 11,
@@ -28,7 +31,8 @@
       "id": 12,
       "name": "Incredible Cotton Towels",
       "description": "Quibusdam reiciendis eum eligendi officiis facilis earum sed. Necessitatibus dignissimos illum temporibus. Dolor maiores atque iure voluptatem perferendis iusto sunt. In autem dignissimos eligendi doloremque. Ducimus non dolores enim omnis est accusamus molestiae temporibus similique.",
-      "imageUrl": "https://source.unsplash.com/1600x900/?product"
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "status": true
     },
     {
       "id": 13,
@@ -40,7 +44,8 @@
       "id": 14,
       "name": "Awesome Metal Gloves",
       "description": "Id eos sed eius placeat. Voluptas quas accusamus dicta molestiae autem qui. Qui asperiores optio ut repudiandae sit vero non. Est exercitationem repellendus voluptas iste.",
-      "imageUrl": "https://source.unsplash.com/1600x900/?product"
+      "imageUrl": "https://source.unsplash.com/1600x900/?product",
+      "status": true
     },
     {
       "id": 15,

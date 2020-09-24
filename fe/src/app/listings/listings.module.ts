@@ -5,7 +5,7 @@ import { ListingsComponent } from './list/listings.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 
-import { ItemComponent } from './item/item.component';
+import { ItemComponent } from './list/item/item.component';
 import { EditItemComponent } from './edit-item/edit-item.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';

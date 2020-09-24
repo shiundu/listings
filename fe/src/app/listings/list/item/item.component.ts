@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import Item from 'src/app/core/service/item/item';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ItemService } from 'src/app/core/service/item/item.service';
+import { Item } from '../../service/item';
+import { ItemService } from '../../service/item.service';
 
 @Component({
   selector: 'app-item',
